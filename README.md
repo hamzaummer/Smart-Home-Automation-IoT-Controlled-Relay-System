@@ -29,7 +29,7 @@ This is a professional IoT relay control system built with Raspberry Pi Pico W, 
 - Push button for manual override  
 - Enclosure for permanent installation
 
-## 🔌 Circuit Connections (Tabular Format)**
+## 🔌 Circuit Connections (Tabular Format)
 
 | Relay Module Pin  | Raspberry Pi Pico W Pin | Description                         |
 |-------------------|-------------------------|-------------------------------------|
@@ -40,15 +40,15 @@ This is a professional IoT relay control system built with Raspberry Pi Pico W, 
 | COM (Common)      | AC Load Neutral         | Common terminal                     |
 | NC (Normally Closed)| Not Connected         | Not used                            |
 
-## 📋 Installation Guide:**
+## 📋 Installation Guide:
 
-### Step 1: Setup Development Environment**
+### Step 1: Setup Development Environment
 
 Install Thonny IDE or your preferred MicroPython IDE
 Download the latest MicroPython firmware for Raspberry Pi Pico W
 Flash MicroPython to your Pico W following official instructions
 
-### Step 2: Configure WiFi Credentials**
+### Step 2: Configure WiFi Credentials
 
 Edit config.py and update your WiFi credentials:
 
