@@ -1,0 +1,40 @@
+{
+  "wifi": {
+    "ssid": "YOUR_WIFI_SSID",
+    "password": "YOUR_WIFI_PASSWORD",
+    "max_connect_attempts": 10,
+    "reconnect_delay": 5,
+    "connection_timeout": 30
+  },
+  "relay": {
+    "pin": 18,
+    "active_low": true,
+    "initial_state": false,
+    "max_on_time": 86400,
+    "safety_timeout": 300
+  },
+  "web_server": {
+    "port": 80,
+    "max_connections": 5,
+    "request_timeout": 10,
+    "enable_auth": false,
+    "auth_username": "admin",
+    "auth_password": "password123"
+  },
+  "system": {
+    "device_name": "Pico-W-Relay",
+    "log_level": "INFO",
+    "enable_watchdog": true,
+    "status_led_pin": "LED",
+    "memory_threshold": 10000
+  },
+  "scheduler": {
+    "enabled": false,
+    "schedules": []
+  },
+  "api": {
+    "enabled": true,
+    "rate_limit": 60,
+    "enable_cors": true
+  }
+}

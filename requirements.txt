@@ -1,0 +1,35 @@
+# Requirements for IoT Controlled Relay System
+
+## MicroPython Libraries
+# All libraries listed here are typically included with MicroPython
+# No additional installation required for standard MicroPython on Raspberry Pi Pico W
+
+## Core Libraries (Built-in)
+# machine - Hardware control (GPIO, timers, etc.)
+# network - WiFi and networking functionality  
+# socket - TCP/UDP socket operations
+# time - Time and timing functions
+# json - JSON encoding/decoding
+# gc - Garbage collection utilities
+
+## Optional Libraries for Extended Features
+# urequests - HTTP client library (for future cloud features)
+# uhashlib - Hashing functions (for authentication features) 
+# ucrypto - Cryptographic functions (for HTTPS support)
+# uasyncio - Asynchronous programming (for concurrent operations)
+
+## Development Tools
+# Thonny IDE - Recommended for MicroPython development
+# ampy - Tool for transferring files to MicroPython devices
+# mpfshell - Alternative file transfer tool
+
+## Hardware Dependencies
+# Raspberry Pi Pico W with MicroPython firmware v1.19.1 or later
+# Single channel relay module (5V or 3.3V compatible)
+# Breadboard and jumper wires for connections
+
+## Notes:
+# - This project is designed specifically for MicroPython
+# - No pip packages or external library installation required
+# - All functionality uses built-in MicroPython modules
+# - For production deployment, consider pre-compiling .py files to .mpy for memory efficiency
