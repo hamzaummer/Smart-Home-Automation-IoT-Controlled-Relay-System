@@ -1,6 +1,50 @@
 """
-Relay Controller Module
-Handles relay hardware control, safety features, and state management
+Relay Controller Module for IoT Relay System
+Professional relay control with comprehensive safety features
+
+Author: M Hamza Ummer
+Contributors: M Armughan Ur Rahim, C Rahul Anand Rao
+Version: 2.0.0
+License: MIT License
+
+Description:
+    Hardware abstraction layer for relay control with comprehensive
+    safety mechanisms, statistics tracking, and fail-safe operation.
+    Designed for 24/7 operation with multiple protection layers.
+
+Safety Features:
+    - Dual safety timers (safety timeout + maximum on-time)
+    - Rapid switching prevention (minimum 1-second interval)
+    - Emergency stop functionality with force-off capability
+    - Fail-safe design (relay turns OFF on system errors)
+    - Hardware protection with GPIO pin validation
+    - Automatic state recovery after system restart
+
+Statistics Tracking:
+    - Total runtime accumulation
+    - Cycle counting (ON/OFF transitions)
+    - Session duration tracking
+    - Power-on event logging
+    - Average session duration calculation
+    - Statistics persistence across reboots
+
+Hardware Requirements:
+    - Raspberry Pi Pico W
+    - Single Channel Relay Module (3.3V or 5V)
+    - Proper electrical isolation for AC loads
+
+Usage:
+    controller = RelayController(config, logger)
+    controller.set_relay_state(True)   # Turn ON
+    controller.set_relay_state(False)  # Turn OFF
+    success = controller.toggle_relay()
+    status = controller.get_status()
+    stats = controller.get_statistics()
+
+Safety Notice:
+    This module controls electrical devices. Ensure proper electrical
+    safety measures and qualified installation for AC loads. The relay
+    module must provide adequate isolation for the controlled voltage.
 """
 
 from machine import Pin, Timer

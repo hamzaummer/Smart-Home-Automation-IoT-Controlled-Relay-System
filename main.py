@@ -1,10 +1,41 @@
 """
 IoT Controlled Relay System - Main Entry Point
-Raspberry Pi Pico W WiFi Relay Controller
+Professional WiFi Relay Controller for Raspberry Pi Pico W
 
-Authors: M Armughan Ur Rahim, M Hamza Ummer, C Rahul Anand Rao
-Description: Main application entry point for IoT relay control system
+Author: M Hamza Ummer
+Contributors: M Armughan Ur Rahim, C Rahul Anand Rao
+Version: 2.0.0
+License: MIT License
 
+Description:
+    Main application entry point for the IoT relay control system.
+    Provides secure, web-based control of electrical appliances through
+    a Raspberry Pi Pico W with comprehensive safety features and modern
+    web interface.
+
+Features:
+    - Secure web-based control interface
+    - Real-time status monitoring
+    - Safety timers and protection mechanisms
+    - RESTful API with authentication
+    - Mobile-responsive design
+    - Comprehensive logging and error handling
+
+Hardware Requirements:
+    - Raspberry Pi Pico W
+    - Single Channel Relay Module
+    - Electrical load to control
+
+Usage:
+    1. Configure WiFi credentials in config.json
+    2. Set up hardware connections as per documentation
+    3. Upload all files to Pico W
+    4. Run this script to start the system
+    5. Access web interface via device IP address
+
+Safety Notice:
+    This system controls electrical devices. Ensure proper electrical
+    safety measures and qualified installation for AC loads.
 """
 
 from machine import Pin, reset
@@ -67,13 +98,17 @@ class IoTRelaySystem:
         
         try:
             while self.running:
-                # Handle web server requests
+                # Handle web server requests (non-blocking)
                 self.web_server.handle_request()
-                
-                # Check WiFi connection
+
+                # Process request queue for better concurrency
+                self.web_server.process_request_queue()
+
+                # Check WiFi connection (non-blocking check)
                 if not self.wifi_manager.is_connected():
                     self.logger.warning("WiFi connection lost, attempting reconnection...")
                     self.status_led.off()
+                    # Non-blocking reconnection attempt
                     if self.wifi_manager.reconnect():
                         self.status_led.on()
                         self.logger.info("WiFi reconnected")

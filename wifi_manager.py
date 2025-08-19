@@ -1,6 +1,50 @@
 """
-WiFi Management Module
-Handles WiFi connection, reconnection, and network status monitoring
+WiFi Manager Module for IoT Relay System
+Robust WiFi connectivity with automatic reconnection
+
+Author: M Hamza Ummer
+Contributors: M Armughan Ur Rahim, C Rahul Anand Rao
+Version: 2.0.0
+License: MIT License
+
+Description:
+    Comprehensive WiFi management for Raspberry Pi Pico W with automatic
+    reconnection, connection monitoring, and robust error handling.
+    Designed for reliable 24/7 operation in IoT environments.
+
+Features:
+    - Automatic WiFi connection with retry logic
+    - Connection monitoring and automatic reconnection
+    - Configurable connection timeouts and retry attempts
+    - Network status reporting and diagnostics
+    - Non-blocking reconnection for service continuity
+    - Comprehensive logging of network events
+
+Network Requirements:
+    - 2.4GHz WiFi network (Pico W limitation)
+    - WPA2/WPA3 security (recommended)
+    - Stable internet connection for remote access
+
+Usage:
+    wifi = WiFiManager(config, logger)
+    if wifi.connect():
+        print(f"Connected! IP: {wifi.get_ip_address()}")
+
+    # In main loop
+    if not wifi.is_connected():
+        wifi.reconnect()
+
+Configuration:
+    Set WiFi credentials in config.json:
+    {
+        "wifi": {
+            "ssid": "YourNetworkName",
+            "password": "YourNetworkPassword",
+            "timeout": 30,
+            "max_attempts": 10,
+            "reconnect_delay": 5
+        }
+    }
 """
 
 import network

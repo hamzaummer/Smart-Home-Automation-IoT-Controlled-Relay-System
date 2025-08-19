@@ -1,0 +1,349 @@
+# IoT Relay System - Git Ignore File
+# Professional exclusions for Raspberry Pi Pico W MicroPython project
+
+# =============================================================================
+# Python & MicroPython
+# =============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# =============================================================================
+# IDE & Editor Files
+# =============================================================================
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Atom
+.atom/
+
+# Thonny IDE
+.thonny/
+
+# =============================================================================
+# Operating System Files
+# =============================================================================
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# MicroPython & Raspberry Pi Pico Specific
+# =============================================================================
+
+# MicroPython compiled files
+*.mpy
+
+# Pico W firmware files
+*.uf2
+
+# Circuit Python
+.fseventsd/
+.metadata_never_index
+.Trashes
+boot_out.txt
+
+# =============================================================================
+# Development & Testing Files
+# =============================================================================
+
+# Test files and outputs
+test_*.py
+*_test.py
+tests/
+testing/
+temp/
+tmp/
+
+# Development scripts
+dev_*.py
+debug_*.py
+scratch_*.py
+
+# Log files
+*.log
+logs/
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+
+# Configuration backups
+config_*.json
+*.json.bak
+
+# =============================================================================
+# Documentation & Media
+# =============================================================================
+
+# Temporary documentation files
+*.tmp
+*.temp
+
+# Generated documentation
+docs/build/
+docs/_build/
+
+# Media files (if not part of project)
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+*.webm
+
+# =============================================================================
+# Security & Sensitive Data
+# =============================================================================
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# API keys and secrets
+secrets.json
+api_keys.txt
+credentials.json
+
+# SSL certificates
+*.pem
+*.key
+*.crt
+*.cert
+
+# =============================================================================
+# Project Specific Exclusions
+# =============================================================================
+
+# Development and testing files specific to this project
+system_test.py
+demo.py
+phase_*.py
+task_*.py
+
+# Personal configuration files
+my_config.json
+local_config.json
+personal_*.py
+
+# Hardware testing files
+hardware_test.py
+relay_test.py
+gpio_test.py
+
+# Network testing
+network_test.py
+wifi_test.py
+
+# Performance testing
+performance_test.py
+load_test.py
+
+# Deployment scripts (keep in separate deployment repo)
+deploy.py
+deploy.sh
+deployment/
+
+# =============================================================================
+# Archive & Compressed Files
+# =============================================================================
+
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip

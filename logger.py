@@ -1,6 +1,53 @@
 """
-Logging Module
-Provides structured logging functionality for the IoT Relay System
+Logging Module for IoT Relay System
+Professional logging system with multiple levels and formatting
+
+Author: M Hamza Ummer
+Contributors: M Armughan Ur Rahim, C Rahul Anand Rao
+Version: 2.0.0
+License: MIT License
+
+Description:
+    Comprehensive logging system designed for IoT applications with
+    structured output, multiple log levels, and memory-efficient operation
+    suitable for MicroPython environments.
+
+Features:
+    - Multiple log levels (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+    - Structured log formatting with timestamps
+    - Memory-efficient operation for embedded systems
+    - Configurable log levels for different environments
+    - Thread-safe logging operations
+    - Automatic log level filtering
+
+Log Levels:
+    - DEBUG: Detailed diagnostic information
+    - INFO: General operational information
+    - WARNING: Warning messages for potential issues
+    - ERROR: Error conditions that don't stop operation
+    - CRITICAL: Critical errors that may stop operation
+
+Usage:
+    logger = Logger('INFO')  # Set minimum log level
+
+    logger.debug("Detailed diagnostic info")
+    logger.info("System started successfully")
+    logger.warning("Potential issue detected")
+    logger.error("Operation failed")
+    logger.critical("Critical system error")
+
+Configuration:
+    Set log level in config.json:
+    {
+        "system": {
+            "log_level": "INFO"
+        }
+    }
+
+Memory Considerations:
+    This logger is optimized for MicroPython and embedded systems.
+    It avoids memory-intensive operations and provides efficient
+    string formatting suitable for resource-constrained environments.
 """
 
 import time

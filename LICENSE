@@ -1,0 +1,73 @@
+MIT License
+
+Copyright (c) 2024 M Hamza Ummer
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+
+ADDITIONAL TERMS FOR ELECTRICAL SAFETY:
+
+This software is designed to control electrical devices through relay modules.
+The authors and contributors provide this software for educational and 
+hobbyist purposes. Users are solely responsible for:
+
+1. Ensuring proper electrical safety measures when working with AC/DC loads
+2. Using appropriately rated components for their specific applications
+3. Following local electrical codes and regulations
+4. Obtaining proper electrical installation by qualified personnel for AC loads
+5. Understanding the risks associated with electrical devices and relay control
+
+The authors and contributors disclaim all liability for any electrical hazards,
+property damage, personal injury, or other consequences arising from the use
+of this software in electrical control applications.
+
+USE AT YOUR OWN RISK. ELECTRICAL SAFETY IS YOUR RESPONSIBILITY.
+
+================================================================================
+
+CONTRIBUTORS:
+
+Primary Author:
+- M Hamza Ummer
+
+Contributors:
+- M Armughan Ur Rahim
+- C Rahul Anand Rao
+
+================================================================================
+
+PROJECT INFORMATION:
+
+Project: IoT Controlled Relay System
+Version: 2.0.0
+Platform: Raspberry Pi Pico W with MicroPython
+Purpose: Professional WiFi relay controller with enterprise security features
+
+Features:
+- Secure web-based control interface
+- Enterprise-grade security (authentication, rate limiting, CSRF protection)
+- Modern responsive web design
+- RESTful API with comprehensive documentation
+- Safety mechanisms and fail-safe operation
+- Real-time monitoring and statistics
+- Professional logging and error handling
+
+For more information, documentation, and support, please refer to the
+README.md file and project documentation.

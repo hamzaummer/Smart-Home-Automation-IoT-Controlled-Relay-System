@@ -1,6 +1,45 @@
 """
-Configuration Management Module
-Handles all system configuration parameters
+Configuration Management Module for IoT Relay System
+Centralized configuration management with validation
+
+Author: M Hamza Ummer
+Contributors: M Armughan Ur Rahim, C Rahul Anand Rao
+Version: 2.0.0
+License: MIT License
+
+Description:
+    Centralized configuration management system for the IoT relay controller.
+    Provides JSON-based configuration with validation, default values, and
+    easy access to all system settings.
+
+Features:
+    - JSON-based configuration file (config.json)
+    - Hierarchical configuration access with dot notation
+    - Default value support for missing configuration keys
+    - Configuration validation and error handling
+    - Easy configuration updates and persistence
+
+Configuration Structure:
+    - wifi: Network connection settings
+    - relay: Hardware control and safety settings
+    - web_server: HTTP server and authentication settings
+    - system: Device information and logging settings
+    - security: Security feature configuration
+    - api: API settings and rate limiting
+
+Usage:
+    config = Config()
+    device_name = config.get('system.device_name', 'Default-Name')
+    wifi_ssid = config.get('wifi.ssid')
+
+    # Update configuration
+    config.set('system.device_name', 'New-Name')
+    config.save()
+
+Configuration File:
+    The system uses config.json for all settings. This file must be
+    present in the root directory of the Pico W. See the included
+    config.json for the complete configuration structure and examples.
 """
 
 import json

@@ -17,9 +17,11 @@
     "port": 80,
     "max_connections": 5,
     "request_timeout": 10,
-    "enable_auth": false,
+    "enable_auth": true,
     "auth_username": "admin",
-    "auth_password": "password123"
+    "auth_password": "SecureRelay2024!",
+    "session_timeout": 1800,
+    "csrf_protection": true
   },
   "system": {
     "device_name": "Pico-W-Relay",
@@ -35,6 +37,15 @@
   "api": {
     "enabled": true,
     "rate_limit": 60,
-    "enable_cors": true
+    "enable_cors": true,
+    "require_auth": true
+  },
+  "security": {
+    "input_validation": true,
+    "rate_limiting": true,
+    "csrf_protection": true,
+    "session_security": true,
+    "max_login_attempts": 5,
+    "lockout_duration": 300
   }
 }

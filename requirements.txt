@@ -1,35 +1,109 @@
-# Requirements for IoT Controlled Relay System
+# IoT Relay System - Requirements
+# Professional WiFi Relay Controller for Raspberry Pi Pico W
+# Author: M Hamza Ummer
+# Version: 2.0.0
 
-## MicroPython Libraries
-# All libraries listed here are typically included with MicroPython
-# No additional installation required for standard MicroPython on Raspberry Pi Pico W
+# =============================================================================
+# HARDWARE REQUIREMENTS
+# =============================================================================
 
-## Core Libraries (Built-in)
-# machine - Hardware control (GPIO, timers, etc.)
-# network - WiFi and networking functionality  
-# socket - TCP/UDP socket operations
-# time - Time and timing functions
-# json - JSON encoding/decoding
-# gc - Garbage collection utilities
+# Essential Components:
+# - Raspberry Pi Pico W (1x) - WiFi-enabled microcontroller
+# - Single Channel Relay Module (1x) - 3.3V or 5V with optocoupler isolation
+# - Jumper Wires (6x) - Male-to-male connecting wires
+# - Micro USB Cable (1x) - For programming and power
+# - Breadboard (1x) - For prototyping connections (optional)
 
-## Optional Libraries for Extended Features
-# urequests - HTTP client library (for future cloud features)
-# uhashlib - Hashing functions (for authentication features) 
-# ucrypto - Cryptographic functions (for HTTPS support)
-# uasyncio - Asynchronous programming (for concurrent operations)
+# Electrical Load:
+# - Any AC/DC device you want to control (bulb, fan, pump, etc.)
+# - Ensure proper electrical safety for AC loads
+# - Use appropriate relay rating for your load
 
-## Development Tools
-# Thonny IDE - Recommended for MicroPython development
-# ampy - Tool for transferring files to MicroPython devices
-# mpfshell - Alternative file transfer tool
+# =============================================================================
+# SOFTWARE REQUIREMENTS
+# =============================================================================
 
-## Hardware Dependencies
-# Raspberry Pi Pico W with MicroPython firmware v1.19.1 or later
-# Single channel relay module (5V or 3.3V compatible)
-# Breadboard and jumper wires for connections
+# For Raspberry Pi Pico W:
+# - MicroPython firmware (latest version for Pico W)
+# - All required modules are built into MicroPython:
+#   * machine (GPIO control)
+#   * network (WiFi connectivity)
+#   * socket (HTTP server)
+#   * time (timing functions)
+#   * json (JSON parsing)
+#   * gc (garbage collection)
+#   * hashlib (security functions)
+#   * re (regular expressions)
 
-## Notes:
-# - This project is designed specifically for MicroPython
-# - No pip packages or external library installation required
-# - All functionality uses built-in MicroPython modules
+# For Development/Testing on PC (optional):
+# - Python 3.8 or newer
+# - No external packages required (uses standard library only)
+
+# Development Tools:
+# - Thonny IDE (recommended) - thonny.org
+# - Or any MicroPython-compatible IDE
+# - Web browser for accessing the interface
+
+# =============================================================================
+# NETWORK REQUIREMENTS
+# =============================================================================
+
+# WiFi Network:
+# - 2.4GHz WiFi network (Pico W limitation)
+# - WPA2/WPA3 security (recommended)
+# - Stable internet connection
+# - Network access for the Pico W device
+
+# Client Access:
+# - Web browser on the same network
+# - Modern browser with JavaScript support
+# - Mobile device support (responsive design)
+
+# =============================================================================
+# SYSTEM REQUIREMENTS
+# =============================================================================
+
+# Memory:
+# - Minimum 100KB free RAM on Pico W
+# - 1MB flash storage for all files
+# - Automatic memory management included
+
+# Performance:
+# - Designed for 24/7 operation
+# - Handles up to 5 concurrent connections
+# - 60 requests per minute rate limiting
+
+# Security:
+# - Change default password before deployment
+# - Use secure WiFi network
+# - Consider network isolation for IoT devices
+
+# =============================================================================
+# INSTALLATION VERIFICATION
+# =============================================================================
+
+# To verify your setup is ready:
+# 1. Run: python run_demo.py
+# 2. Look for: "🎉 ALL TESTS PASSED - SYSTEM READY FOR DEPLOYMENT!"
+# 3. If successful, you're ready to deploy to Pico W
+
+# =============================================================================
+# COMPATIBILITY
+# =============================================================================
+
+# Tested with:
+# - MicroPython 1.20+ for Raspberry Pi Pico W
+# - Python 3.8+ for development testing
+# - Modern web browsers (Chrome, Firefox, Safari, Edge)
+# - Windows 10/11, macOS, Linux for development
+
+# =============================================================================
+# SUPPORT
+# =============================================================================
+
+# For issues:
+# 1. Check WINDOWS_SETUP.md for Windows-specific help
+# 2. Run the demo script to verify setup
+# 3. Check README.md troubleshooting section
+# 4. Ensure all hardware connections are correct
 # - For production deployment, consider pre-compiling .py files to .mpy for memory efficiency
