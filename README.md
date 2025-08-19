@@ -4,9 +4,9 @@
 
 A production-ready IoT relay control system featuring enterprise-grade security, modern web interface, and comprehensive safety mechanisms. Control electrical appliances remotely with confidence through a secure, user-friendly web interface.
 
-**Author:** M Hamza Ummer
-**Contributors:** M Armughan Ur Rahim, C Rahul Anand Rao
-**Version:** 2.0.0
+**Author:** M Hamza Ummer  
+**Contributors:** M Armughan Ur Rahim, C Rahul Anand Rao  
+**Version:** 2.0.0  
 **License:** MIT License
 
 ## 📁 Project Structure
@@ -61,31 +61,31 @@ pico-w-iot-relay-controller/
 - **Network Recovery** - Automatic WiFi reconnection
 - **JSON Configuration** - Easy setup and customization
 
-## 🛠️ Hardware Requirements :
+## 🛠️ Hardware Requirements
 
 ### Essential Components
-- Raspberry Pi Pico W (1x) – WiFi-enabled microcontroller  
-- Single Channel Relay Module (1x) – 5V/3.3V with optocoupler isolation  
-- Breadboard (1x) – For prototyping connections  
-- Jumper Wires (8–10x) – Male-to-male connecting wires  
-- Micro USB Cable (1x) – For programming and power  
-- AC Load (1x) – Bulb, fan, or other appliance to control  
+- **Raspberry Pi Pico W** (1x) - WiFi-enabled microcontroller
+- **Single Channel Relay Module** (1x) - 3.3V or 5V with optocoupler isolation
+- **Jumper Wires** (6x) - Male-to-male connecting wires
+- **Micro USB Cable** (1x) - For programming and power
+- **Breadboard** (1x) - For prototyping connections (optional)
 
-### Optional Components
-- Status LEDs for visual feedback  
-- Push button for manual override  
-- Enclosure for permanent installation
+### Electrical Load
+- Any AC/DC device you want to control (bulb, fan, pump, etc.)
+- Ensure proper electrical safety for AC loads
+- Use appropriate relay rating for your load
 
-## 🔌 Circuit Connections (Tabular Format)
+## 🔌 Circuit Connections
 
-| Relay Module Pin  | Raspberry Pi Pico W Pin | Description                         |
-|-------------------|-------------------------|-------------------------------------|
-| VCC               | 3.3V or VBUS            | Power supply (3.3V or 5V)           |
-| GND               | GND                     | Ground connection                   |
-| IN (Trigger)      | GP18                    | Control signal                      |
-| NO (Normally Open)| AC Load Hot Wire        | Switched output                     |
-| COM (Common)      | AC Load Neutral         | Common terminal                     |
-| NC (Normally Closed)| Not Connected         | Not used                            |
+| Relay Module Pin | Pico W Pin | Description |
+|------------------|------------|-------------|
+| VCC | 3.3V (Pin 36) or VBUS (Pin 40) | Power supply |
+| GND | GND (Pin 38) | Ground connection |
+| IN (Signal) | GP18 (Pin 24) | Control signal |
+| NO (Normally Open) | AC Load Hot Wire | Switched output |
+| COM (Common) | AC Load Neutral | Common terminal |
+
+⚠️ **SAFETY WARNING:** For AC loads, ensure proper electrical safety measures and qualified installation.
 
 ## 🚀 Quick Start Guide
 
@@ -104,8 +104,6 @@ pico-w-iot-relay-controller/
    GND            →    GND (Pin 38)
    IN (Signal)    →    GP18 (Pin 24)
    ```
-
-   ⚠️ **SAFETY WARNING:** For AC loads, ensure proper electrical safety measures and qualified installation.
 
 ### 🔧 **Step 2: Software Installation**
 
@@ -132,7 +130,7 @@ pico-w-iot-relay-controller/
 ### 🔐 **Step 3: Configuration**
 
 1. **⚠️ CRITICAL: Change Default Password**
-
+   
    Edit `config.json` and update the password:
    ```json
    {
@@ -143,7 +141,7 @@ pico-w-iot-relay-controller/
    ```
 
 2. **Configure WiFi**
-
+   
    Update your network credentials in `config.json`:
    ```json
    {
@@ -163,48 +161,24 @@ pico-w-iot-relay-controller/
    }
    ```
 
-### Step 2: Configure WiFi Credentials
-
-Edit config.py and update your WiFi credentials:
-
-'wifi': {
-    'ssid': 'YOUR_ACTUAL_WIFI_SSID',
-    'password': 'YOUR_ACTUAL_WIFI_PASSWORD',
-    # ... other settings
-}
-
-### Step 3: Upload Code Files
-Upload all Python files to your Raspberry Pi Pico W:
-- `main.py` - Main application entry point  
-- `config.py` - Configuration management  
-- `wifi_manager.py` - WiFi connectivity handling  
-- `web_server.py` - HTTP server and web interface  
-- `relay_controller.py` - Relay hardware control  
-- `logger.py` - Logging system  
-
-### Step 4: Hardware Assembly
-- Connect the relay module to Pico W as per the circuit diagram  
-- Connect your AC load through the relay's **NO** and **COM** terminals  
-- **⚠️ Ensure all AC connections are made safely by a qualified person**  
-
 ### 🧪 **Step 4: Test the System (Recommended)**
 
 Before deploying to your Pico W, test the system on your computer:
 
 1. **Run the Demonstration**
-
+   
    **Windows Users:**
    ```cmd
    # Open Command Prompt and navigate to project folder
    cd "path\to\pico-w-iot-relay-controller"
    python run_demo.py
    ```
-
+   
    **If you get "python is not recognized" error:**
    ```cmd
    py run_demo.py
    ```
-
+   
    **Mac/Linux Users:**
    ```bash
    cd /path/to/pico-w-iot-relay-controller
@@ -216,7 +190,7 @@ Before deploying to your Pico W, test the system on your computer:
    ```
    🎉 ALL TESTS PASSED - SYSTEM READY FOR DEPLOYMENT!
    ```
-
+   
    If you see this message, your system is ready to deploy!
 
 3. **Troubleshooting**
@@ -344,79 +318,6 @@ curl -u admin:yourpassword -X POST http://192.168.1.100/api/relay/toggle
 - **CSRF Protection** - Protection against cross-site request forgery
 - **Secure Error Handling** - No sensitive information disclosed in errors
 
-## 🔧 **Configuration Reference**
-
-### 📡 **WiFi Settings**
-```json
-{
-  "wifi": {
-    "ssid": "YourWiFiNetwork",
-    "password": "YourWiFiPassword",
-    "timeout": 30,
-    "max_attempts": 10,
-    "reconnect_delay": 5
-  }
-}
-```
-
-### 🔌 **Relay Configuration**
-```json
-{
-  "relay": {
-    "pin": 18,
-    "active_low": true,
-    "safety_timeout": 300,
-    "max_on_time": 86400,
-    "rapid_switching_delay": 1
-  }
-}
-```
-
-### 🌐 **Web Server Settings**
-```json
-{
-  "web_server": {
-    "port": 80,
-    "max_connections": 5,
-    "request_timeout": 10,
-    "enable_auth": true,
-    "session_timeout": 1800
-  }
-}
-```
-
-### 🔒 **Security Configuration**
-```json
-{
-  "security": {
-    "input_validation": true,
-    "rate_limiting": true,
-    "csrf_protection": true,
-    "max_login_attempts": 5,
-    "lockout_duration": 300
-  }
-}
-```
-
-**Web Server Settings**
-```python
-'web_server': {
-    'port': 80,
-    'max_connections': 5,
-    'request_timeout': 10
-}
-```
-
-## 📊 Usage Statistics
-
-The system automatically tracks:
-- Total Runtime: Cumulative time relay has been ON
-- Cycle Count: Number of ON/OFF cycles
-- Session Duration: Current continuous ON time
-- Power-on Events: Total number of times turned ON
-- Average Session: Mean duration per ON cycle
-- Statistics persist across system reboots and are accessible via web interface or API.
-
 ## 🔧 **Troubleshooting Guide**
 
 ### 🐍 **Setup Issues**
@@ -537,70 +438,41 @@ Solutions:
 4. Try the system with minimal configuration
 5. Check WINDOWS_SETUP.md for Windows-specific issues
 ```
-- Verify relay module power supply  
-- Test relay with manual commands  
 
-**Web Interface Not Accessible**
-- Confirm Pico W IP address  
-- Check firewall settings  
-- Ensure devices are on same network  
+## 📄 **License**
 
-**Memory Issues**
-- Automatic garbage collection  
-- Restart if warnings persist  
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-**Debug Mode**
-```python
-'system': {
-    'log_level': 'DEBUG'
-}
-```
-
-## 🔐 Security Considerations
-
-- Local Network Only: System operates on local WiFi network
-- No Internet Required: Fully self-contained operation
-- Rate Limiting: Built-in protection against rapid switching
-- Input Validation: All web inputs are validated
-- Safety Timeouts: Hardware protection against stuck-on conditions
-
-## 🚧 Future Enhancements
-
-- Scheduling System: Timer-based automation
-- Multiple Relay Support: Control multiple devices
-- Mobile App: Native iOS/Android application
-- Cloud Integration: Remote access via cloud service
-- User Authentication: Password protection
-- HTTPS Support: Encrypted communication
-- Energy Monitoring: Power consumption tracking
-
-## 🤝 Contributing
+## 🤝 **Contributing**
 
 Contributions are welcome! Please feel free to submit pull requests or open issues for:
 
-- Bug fixes
+- Bug fixes and improvements
 - Feature enhancements
 - Documentation improvements
 - Hardware compatibility updates
 
-Development Setup
+### Development Setup
+1. Fork the repository
+2. Create a feature branch
+3. Test changes thoroughly
+4. Submit pull request with detailed description
 
-- Fork the repository
-- Create a feature branch
-- Test changes thoroughly
-- Submit pull request with detailed description
+## 👥 **Authors & Contributors**
 
-## 📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+**Primary Author:**
+- **M Hamza Ummer** - Project Lead & Development
 
-## 👥 Authors
-M Hamza Ummer - Project Lead
+**Contributors:**
+- **M Armughan Ur Rahim** - Hardware Design & Testing
+- **C Rahul Anand Rao** - Software Development & Integration
 
-M Armughan Ur Rahim - Hardware Design
+## 🙏 **Acknowledgments**
 
-C Rahul Anand Rao - Software Development
-
-## 🙏 Acknowledgments
 - Raspberry Pi Foundation for the excellent Pico W platform
 - MicroPython community for the robust embedded Python implementation
-- How2Electronics for project inspiration
+- Open source community for inspiration and support
+
+---
+
+**⚡ Ready to control your world? Deploy this system and experience professional IoT control! ⚡**
